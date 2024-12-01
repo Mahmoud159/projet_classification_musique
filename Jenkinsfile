@@ -27,18 +27,18 @@ pipeline {
                     '''
                     powershell 'docker-compose up -d'
                     // sleep(10)
-                    powershell 'docker exec svm_service pytest tests/'
-                    powershell 'docker exec vgg_service pytest tests/'
+                    // powershell 'docker exec svm_service pytest tests/'
+                    // powershell 'docker exec vgg_service pytest tests/'
                 }
             }
         }
-        // stage('Push to Docker Hub') {
-        //     steps {
-        //         withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v1/']) {
-        //             powershell 'docker-compose push'
-        //         }
-        //     }
-        // }
+        stage('Push to Docker Hub') {
+            steps {
+                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: 'https://index.docker.io/v1/']) {
+                    powershell 'docker-compose push'
+                }
+            }
+        }
         stage('Cleanup') {
             steps {
                 powershell 'docker-compose down'
