@@ -17,7 +17,6 @@ pipeline {
             steps {
                 script {
                     powershell 'docker-compose down'
-                    powershell 'docker-compose up -d'
                     powershell '''
                     try {
                         docker rm -f svm_service
@@ -26,6 +25,8 @@ pipeline {
                         Write-Host "Les conteneurs n'ont pas été trouvés, continuation du processus."
                     }
                     '''
+                    powershell 'docker-compose up -d'
+                    // sleep(10)
                     powershell 'docker exec svm_service pytest tests/'
                     powershell 'docker exec vgg_service pytest tests/'
                 }
