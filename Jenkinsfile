@@ -25,8 +25,8 @@ pipeline {
                         Write-Host "Les conteneurs n'ont pas été trouvés, continuation du processus."
                     }
                     '''
-                    // sh 'docker exec svm_service pytest tests/'
-                    // sh 'docker exec vgg_service pytest tests/'
+                    powershell 'docker exec svm_service pytest tests/'
+                    powershell 'docker exec vgg_service pytest tests/'
                 }
             }
         }
