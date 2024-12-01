@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   svm_service:
-    image: mahmoud1920/svm_service
+    image: svm_service
     container_name: svm_service
     command: tail -f /dev/null
     ports:
@@ -10,7 +10,7 @@ services:
       - app_network  
 
   vgg_service:
-    image: mahmoud1920/vgg_service
+    image: vgg_service
     container_name: vgg_service
     command: tail -f /dev/null
     ports:
