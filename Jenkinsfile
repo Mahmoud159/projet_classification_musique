@@ -39,10 +39,10 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Cleanup') {
-            steps {
-                powershell 'docker-compose down'
-            }
-        }
+        // stage('Cleanup') {
+        //     steps {
+        //         powershell 'docker-compose down'
+        //     }
+        // }
     }
 }
