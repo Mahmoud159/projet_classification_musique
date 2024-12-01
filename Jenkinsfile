@@ -17,6 +17,7 @@ pipeline {
             steps {
                 script {
                     powershell 'docker-compose down'
+                    powershell 'docker-compose up -d'
                     powershell '''
                     try {
                         docker rm -f svm_service
