@@ -12,6 +12,7 @@ COPY requirements.txt .
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir pytest
 
 # Exposer le port de ce service (par ex., 5002)
 EXPOSE 5002
