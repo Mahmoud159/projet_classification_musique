@@ -16,6 +16,8 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
+                    powershell 'docker-compose down'
+                    powershell 'docker rm -f svm_service vgg_service || true'
                     powershell 'docker-compose up -d'
                     // sh 'docker exec svm_service pytest tests/'
                     // sh 'docker exec vgg_service pytest tests/'
