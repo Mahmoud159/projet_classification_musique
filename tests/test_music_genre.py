@@ -1,13 +1,14 @@
 import requests
 import base64
+import os
 
 def test_music_genre():
     base_url = "http://127.0.0.1:5000"  
 
     url_svm = f"{base_url}/svm/classify_svm"  
     url_vgg = f"{base_url}/vgg19/classify_vgg19"   
-
-    with open("hiphop.00003.wav", "rb") as audio_file:
+    file_path = os.path.join(os.path.dirname(__file__), "hiphop.00003.wav")
+    with open(file_path, "rb") as audio_file:
         wav_data = base64.b64encode(audio_file.read()).decode("utf-8")
 
     data = {"wav_music": wav_data}
