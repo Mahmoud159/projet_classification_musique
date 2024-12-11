@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="16.042" timestamp="2024-12-11T18:24:28.611818+01:00" hostname="DESKTOP-TH7IP9M"><testcase classname="test_music_genre" name="test_music_genre" time="15.010" /></testsuite></testsuites>
+<?xml version="1.0" encoding="utf-8"?><testsuites>
+<testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="16.042" timestamp="2024-12-11T18:24:28.611818+01:00" hostname="DESKTOP-TH7IP9M">
+<testcase classname="test_music_genre" name="test_music_genre" time="15.010" />
+</testsuite>
+</testsuites>
