@@ -26,9 +26,10 @@ pipeline {
                     }
                     '''
                     powershell 'docker-compose up -d'
-                    // sleep(10)
-                    // powershell 'docker exec svm_service pytest tests/'
-                    // powershell 'docker exec vgg_service pytest tests/'
+                    sleep(10)
+                    powershell 'docker exec svm_service pytest tests/test_music_genre.py --junitxml=results_svm.xml'
+                    powershell 'docker exec vgg_service pytest tests/test_music_genre.py --junitxml=results_vgg.xml'
+                
                 }
             }
         }
