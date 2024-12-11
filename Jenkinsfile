@@ -13,6 +13,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    powershell '''
+                    python -m pip install --upgrade pip
+                    pip install pytest
+                    '''
+                }
+            }
+        }
         stage('Run Tests') {
             steps {
                 script {
