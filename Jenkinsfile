@@ -17,6 +17,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
+                    env.PATH = "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Python\\Python312\\Scripts;" + env.PATH
                     powershell '''
                     python -m pip install --upgrade pip
                     pip install pytest
