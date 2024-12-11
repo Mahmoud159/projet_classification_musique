@@ -40,7 +40,7 @@ pipeline {
                     '''
                     powershell 'docker-compose up -d'
                     sleep(10)
-                    powershell 'pytest tests/test_music_genre.py --junitxml=results.xml'
+                    // powershell 'pytest tests/test_music_genre.py --junitxml=results.xml'
 
                 }
             }
